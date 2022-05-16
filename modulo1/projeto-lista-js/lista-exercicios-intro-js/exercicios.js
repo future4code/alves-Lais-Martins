@@ -1,4 +1,4 @@
-/* EXEMPLOS DE IMPLEMENTAÇÃO ---------------------------------------------------------------
+//EXEMPLOS DE IMPLEMENTAÇÃO ---------------------------------------------------------------
 
 // EXERCÍCIO 0A
 function soma(num1, num2) {
@@ -17,18 +17,49 @@ function imprimeMensagem() {
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
-function calculaAreaRetangulo() {
-  // implemente sua lógica aqui
 
+  
+  
+function calculaAreaRetangulo(altura, largura, altura2, largura2) {
+  console.log(resposta, resposta2)
+  imprime = altura * largura, altura2 * largura2
+  return imprime
 }
+
+const respAltura = Number(prompt("altura 3, exemplo a"))
+const respLargura = Number(prompt("largura 5 exemplo a"))
+const resposta = respAltura * respLargura
+
+
+const respAltura2 = Number(prompt("altura 2 exemplo b"))
+const respLargura2 = Number(prompt("largura 6 exemplo b"))
+const resposta2 = respAltura2 * respLargura2
+
+console.log(calculaAreaRetangulo)
+
 
 // EXERCÍCIO 02
-function imprimeIdade() {
-  // implemente sua lógica aqui
 
+function imprimeIdade(hoje, nascimento) {
+
+  const calculo = hoje - nascimento
+  const resultado = calculo
+
+return resultado
 }
 
+
+let anoAtual = 2020
+const anoNascimento = 1990
+const calculo1 = anoAtual - anoNascimento
+
+
+
+
+
 // EXERCÍCIO 03
+
+
 function calculaIMC(peso, altura) {
   // implemente sua lógica aqui
 
@@ -107,6 +138,10 @@ function checaValidadeInscricaoLabenu() {
 
 }
 
-INICIANDO PROJETO */
+function imprimeIdade(hoje, nascimento) {
+  const calculo = anoAtual - anoNascimento
+return calculo
+}
+
 
 
