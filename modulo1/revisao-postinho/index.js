@@ -66,7 +66,7 @@
 
 // const ex4 = (senhaU, senhaF) => {
 //        if (senhaU === senhaF) {
-//         console.log('Você está logado')
+//        console.log('Você está logado')
 //     } else {
 //        console.log('Senha inválida')
 //     }
@@ -76,44 +76,35 @@
 
 // // Exercício 5----------------------------------------------------------------------------------------------------
 
-const nomeCidadao = prompt("Qual o seu nome?").toLowerCase()
-const vacinaTomada = prompt("Qual vacina você tomou?")
-let dataDehoje = new Date(20/05/2022).toLocaleDateString ()
+// const nomeCidadao = prompt("Qual o seu nome?").toLowerCase()
+// const vacinaTomada = prompt("Qual vacina você tomou?")
+// let dataDehoje = new Date(20/05/2022).toLocaleDateString ()
 
-const ex5 = (nome, vacina, data) => {
-    if (vacina === "coronavac"){
-        function adicionarDiasData(dias){
-            let novadata    = (data +  dias(28) );
-            return novadata.dia() + "/" + mes()  + "/" + ano();
-          }
-        console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a 28 dias. Compareça no posto na data ${adicionarDiasData}.`)
-    } else if ( vacina === "astrazenica" ) {
-        function adicionarDiasData(dias){
-            var novadata    = (data + (dias * 90 ));
-            return novadata.dia() + "/" + (novadata.mes() + 1) + "/" + novadata.ano();
-          }
-        console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto na data ${novadata}.`)
-    } else {
-        function adicionarDiasData(dia){
-            var novadata    = (data + ( dia = 90 ));
-            return novadata.dia() + "/" + (novadata.mes() + 1) + "/" + novadata.ano();
-          }
-        console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto na data ${data}.`)
-    }
-}
-ex5(nomeCidadao, vacinaTomada, dataDehoje)
-
-
-// const primeiraDose = () => {
-
-    //  Sua lógica aqui
-
-
+// const ex5 = (nome, vacina, data) => {
+//     if (vacina === "coronavac"){
+//         function adicionarDiasData(dias){
+//             let novadata    = (data +  dias(28) );
+//             return novadata.dia() + "/" + mes()  + "/" + ano();
+//           }
+//         console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a 28 dias. Compareça no posto na data ${adicionarDiasData}.`)
+//     } else if ( vacina === "astrazenica" ) {
+//         function adicionarDiasData(dias){
+//             var novadata    = (data + (dias * 90 ));
+//             return novadata.dia() + "/" + (novadata.mes() + 1) + "/" + novadata.ano();
+//           }
+//         console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto na data ${novadata}.`)
+//     } else {
+//         function adicionarDiasData(dia){
+//             var novadata    = (data + ( dia = 90 ));
+//             return novadata.dia() + "/" + (novadata.mes() + 1) + "/" + novadata.ano();
+//           }
+//         console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto na data ${data}.`)
+//     }
 // }
-// console.log(primeiraDose())
+// ex5(nomeCidadao, vacinaTomada, dataDehoje)
 
 
-// // LOOP+CONDICIONAL
+
 
 // // Exercício 6 -------------------------------------------------------------------------------------
 
@@ -122,13 +113,15 @@ ex5(nomeCidadao, vacinaTomada, dataDehoje)
 //         { nome: "Artur", imunizacao: "incompleta" },
 //         { nome: "Barbara", imunizacao: "incompleta" },
 //         { nome: "Carlos", imunizacao: "incompleta" }
-//     ]
 
-//     //  Sua lógica aqui
+                
+            
+//     ]
+// return nomeDoUsuario = usuarios.replaceAll("incompleta", "completa")
 
 
 // }
-// console.log(segundaDose("Barbara"));
+// console.log(segundaDose)
 
 // // Exercício 7 --------------------------------------------------------------------------------------
 
@@ -139,7 +132,8 @@ ex5(nomeCidadao, vacinaTomada, dataDehoje)
 //         { nome: "Carlos", imunizacao: "incompleta" }
 //     ]
 
-//     //  Sua lógica aqui
+// if (usuarios.imunizacao === "incompleta"){
+// console.log('por favor volte ao postinho para tomar a segunda dose')
 
 // }
 // console.log(avisoAosAtrasados());
