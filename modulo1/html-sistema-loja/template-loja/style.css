@@ -1,0 +1,60 @@
+/* #bodypaginicial {
+    background-color: black;
+    color: cornsilk;
+} */
+
+body{
+background-image : url('../imagens/boca.jpg');
+color: aliceblue;
+}
+
+.links {
+    display: inline;
+    background-color: darkgoldenrod;
+   }
+
+.links{
+    color:honeydew ;
+}
+
+.botaojogo {
+    background-color: darkmagenta;
+    color: orange;
+    display:inline;
+}
+@font-face {
+    src: url(C:\Users\itautec\Desktop\alves-Lais-Martins\modulo1\html-sistema-loja\template-loja\typodermic-eula-03-2020.pdf);
+    font-family:fantasy;    
+    font-weight: normal;
+} 
+body{
+	font-family:fantasy; 
+}
+#cima {
+    font-size: 25px ;
+}
+
+.botaofilme {
+    display:inline;
+    background-color: darkmagenta;
+    color: orange;  
+}
+.botaolivros {
+    display:inline;
+    background-color: darkmagenta;
+    color: orange;  
+}
+
+#botaolinkados {
+    padding: 3px;
+}
+ 
+#titulo {
+    margin-left: 60px ;
+    background-color: darkviolet;
+}
+
+#bodestoquey {
+    background-color: black;
+    color: cornsilk;
+}
