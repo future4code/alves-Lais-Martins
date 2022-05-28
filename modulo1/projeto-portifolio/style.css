@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+    color: white;
+}
+#top {
+    background-image: url(./imagens/fundtextura.jpg);
+    background-repeat:inherit;
+    margin: 2%;
+}
+
+.menu {
+    background-color:gray;
+    margin: 10%;
+    margin-top: 0%;
+}
+
+.smoothscroll{
+    color:darkred;
+}
+
+
+#nome1 {
+    padding-top: -10%;
+    font-size: 250%;
+}
+.intro-position{
+    font-size: large;
+}
+#Sobre {
+    background-color: gray;
+    color: darkred;
+}
+
+#perfil {
+    background-size:contain;
+   
+}
+
+.linkprojeto {
+    color: darkred;
+}
+
+#emaill {
+    
+    color: darkred;
+}
+
+#ultimo {
+    color: yellow;
+}
+
