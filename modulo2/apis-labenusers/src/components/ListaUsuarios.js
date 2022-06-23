@@ -4,6 +4,11 @@ import styled from "styled-components";
 
 const CardLista = styled.div `
 background-color: beige;
+margin: 10px;
+width: 300px;
+display: flex;
+justify-content: space-between;
+
 `
 
 
@@ -32,7 +37,7 @@ export default class ListaUsuarios extends React.Component {
   }
 
   deletarUsuarios = (id) => {
-    const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}'
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`
     axios.delete(url, {
       headers: {
         Authorization: "lais-martins-alves"
@@ -40,16 +45,16 @@ export default class ListaUsuarios extends React.Component {
     })
     .then((res) => {
       alert ("Usuario(a) deletado(a)")
-      this.pegandoUsuarios
+      this.pegandoUsuarios()
     })
       .catch((err) => {
-        alert("Ocorreu um erro! Tente novamente.")
+        alert("Ocorreu um erro! Tente novamente")
       })
   }
 
   render() {
     const listaDeUsuarios = this.state.usuarios.map((pessoa) => {
-      return <CardLista key={pessoa.id}>{pessoa.name}<button>X</button></CardLista>;
+      return <CardLista key={pessoa.id}>{pessoa.name}<button onClick={() => {this.deletarUsuarios(pessoa.id)}}>Deletar</button></CardLista>;
     }) 
 
     return (
