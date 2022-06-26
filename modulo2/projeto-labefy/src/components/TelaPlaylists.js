@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import axios from "axios";
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const CardPlayList = styled.div`
 border: 1px solid black;
@@ -9,7 +9,6 @@ padding: 5px;
 margin: 10px;
 `
 export default class TelaPlaylists extends React.Component {
-
     state = {
         listas: []
     }
@@ -18,18 +17,19 @@ export default class TelaPlaylists extends React.Component {
         this.pegaListas()
     }
 
-    pegaListas = () => {
+    pegaListas = async () => {
         const url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
-        axios.get(url, {
-            headers: {
-                Authorization: "lais-martins-alves"
-            }
-        }) .then((res) => {
-                this.setState({ listas: res.data })
+        try {
+            const res = await axios.get(url, {
+                headers: {
+                    Authorization: "lais-martins-alves"
+                }
             })
-            .catch((err) => {
-                alert("Erro! Tente novamente.")
-            })
+
+            this.setState({ listas: res.data })
+        } catch (err) {
+            alert("Ocorreu um erro!")
+        }
     }
 
     deletarLista = (id) => {
@@ -40,31 +40,31 @@ export default class TelaPlaylists extends React.Component {
             }
         })
             .then((res) => {
-                alert("Lista deletada")
+                alert("Playlist deletada")
                 this.pegaListas()
             })
             .catch((err) => {
-                alert("Erro ao deletar lista")
+                alert("Ocorreu um erro!")
             })
     }
 
 
     render() {
-        const playList = this.state.listas.map((user) => {
+        const imprimeLista = this.state.listas.map((list) => {
             return (
-            <CardPlayList key={user.id}> 
-            {user.name} 
-            <button onClick={() => this.deletarLista(user.id)}>Deletar Playlist</button>
-            </CardPlayList>
+                <CardPlayList key={list.id}>
+                    {list.name}
+                    <button onClick={() => this.deletarLista(list.id)}>Deletar Playlist</button>
+                </CardPlayList>
             )
         })
-       
+
 
         return (
-            <>
+            <div>
                 <button onClick={this.props.irCriar}>Criar Nova Playlist</button>
-                <p> {playList} </p>
-            </>
+                {imprimeLista} 
+            </div>
         )
     }
 }
