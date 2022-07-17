@@ -1,11 +1,12 @@
-import Reat from 'react'
+import React from 'react'
 import {useNavigate} from 'react-router-dom'
+
 
 export default function AreaAdm () {
     const navigate = useNavigate()
 
-    const home = () => {
-        navigate("/")
+    const voltar = () => {
+        navigate(-1)
     }
 
     const addViagem = () => {
@@ -18,10 +19,11 @@ export default function AreaAdm () {
 
     return (
         <>
+            <button onClick= {voltar}> Voltar</button>
+            <br/>
         <p>Área de Funcionários</p>
-            <button onClick= {home}> Início </button>
             <button onClick = {addViagem}> Adicionar Viagem </button>
-            <button onClick = {viagemEscolhida}> Viagem Escolhida </button>
+            <button onClick = {viagemEscolhida}> Candidatos à viagens </button>
         </>
     )
 }
