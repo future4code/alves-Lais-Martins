@@ -1,25 +1,26 @@
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import * as A from './styled'
 
 
 
 export default function Etapa1() {
     const navigate = useNavigate()
-    const [select, setSelect] = useState("")
-      
-
-      const mudaTela = () => {
-        {onChange === "Ensino médio incompleto"||"Ensino médio completo"? navigate("/tres"):navigate("/dois")}   
-    }
+    const [select, setSelect] = useState(1)
     
         const onChange = (e) => {
             setSelect(e.target.value)
         }
-  const medio = "Ensino médio incompleto"
+  
+  const mudaTela = () => {
+    (select === 1 || select === 2)? navigate("tres") : navigate("dois")
+    console.log(select)
+}
 
   return (
-    <div>
-        <h2>Etapa1 - Dados Gerais</h2>
+    <A.ContainerForm>
+        <div>
+        <A.H2>Etapa1 - Dados Gerais</A.H2>
 
         <p>1- Qual o seu nome?</p>
         <input/>
@@ -33,14 +34,15 @@ export default function Etapa1() {
         <p>4- Qual a sua escolaridade?</p>
         <select value={select} onChange={onChange}>
                        
-            <option >{medio}</option>
-            <option >Ensino médio completo</option>
-            <option >Ensino superior incompleto</option>
-            <option >Ensino superior completo</option>
+            <option value= {1}>Ensino médio incompleto</option>
+            <option value= {2} >Ensino médio completo</option>
+            <option value= {3}>Ensino superior incompleto</option>
+            <option value= {4}>Ensino superior completo</option>
         </select>
             <br/>
             <br/>
         <button onClick={mudaTela}>Próxima Etapa</button> 
-    </div>
+        </div>
+    </A.ContainerForm>
   )
   }
