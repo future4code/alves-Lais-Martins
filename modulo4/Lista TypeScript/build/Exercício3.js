@@ -21,5 +21,4 @@ const Devolve = {
     genero: "ação",
     ponto: Ponto.TRES
 };
-console.log(Devolve);
 //# sourceMappingURL=Exerc%C3%ADcio3.js.map

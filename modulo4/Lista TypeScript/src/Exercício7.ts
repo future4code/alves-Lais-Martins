@@ -1,8 +1,6 @@
 console.log("Exercício7")
 
-
-
-const estoqueAtual = [
+const estoqueAtual: EstoqueAtual[] = [
 	{ nome: "MacMugffin", quantidade: 37, valorUnitario: 51.040},
 	{ nome: "Vassoura voadora", quantidade: 56, valorUnitario: 210.0},
 	{ nome: "Laço da verdade", quantidade: 32, valorUnitario: 571.5},
@@ -15,21 +13,21 @@ const estoqueAtual = [
 type EstoqueAtual = {
     nome: string,
     quantidade: number,
-    valorUnitario: string
+    valorUnitario: string | number
 }
 
-let m3 = estoqueAtual.map((estoqueAtual) => {
- return estoqueAtual.valorUnitario.toFixed(2).replace('.', ',')
-})
-console.log(m3)
+const ajustaPreco = (preco: number): string => {
+	const valorAjustado: string = preco.toFixed(2).replace(".", ",");
+	return "R$ " + valorAjustado;
+  };
 
-let final = estoqueAtual.map((estoqueAtual) => {
-    if (estoqueAtual.valorUnitario)
-    return estoqueAtual && {m3}
-})
-
-console.log(final)
-
-
-// SOCORRO, DEUS
-
+const ex7 =(estoqueAtual: EstoqueAtual[]): EstoqueAtual[] => {
+	estoqueAtual.forEach((index) => 
+	(index.valorUnitario = ajustaPreco(index.valorUnitario as number))
+	)
+	const ordem : EstoqueAtual[] = estoqueAtual.sort(
+		(inicio, fim) => inicio.quantidade - fim.quantidade
+	)
+	return ordem
+}
+console.table(ex7(estoqueAtual))

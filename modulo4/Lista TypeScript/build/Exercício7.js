@@ -8,13 +8,14 @@ const estoqueAtual = [
     { nome: "Plumbus", quantidade: 13, valorUnitario: 140.44 },
     { nome: "Pokebola", quantidade: 200, valorUnitario: 99.9915 }
 ];
-let m3 = estoqueAtual.map((estoqueAtual) => {
-    return estoqueAtual.valorUnitario.toFixed(2).replace('.', ',');
-});
-console.log(m3);
-let final = estoqueAtual.map((estoqueAtual) => {
-    if (estoqueAtual.valorUnitario)
-        return estoqueAtual && { m3 };
-});
-console.log(final);
+const ajustaPreco = (preco) => {
+    const valorAjustado = preco.toFixed(2).replace(".", ",");
+    return "R$ " + valorAjustado;
+};
+const ex7 = (estoqueAtual) => {
+    estoqueAtual.forEach((index) => (index.valorUnitario = ajustaPreco(index.valorUnitario)));
+    const ordem = estoqueAtual.sort((inicio, fim) => inicio.quantidade - fim.quantidade);
+    return ordem;
+};
+console.table(ex7(estoqueAtual));
 //# sourceMappingURL=Exerc%C3%ADcio7.js.map

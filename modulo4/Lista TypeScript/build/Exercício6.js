@@ -7,11 +7,14 @@ const clientes = [
     { cliente: "Artur", saldoTotal: 1800, debitos: [200, 300] },
     { cliente: "Soter", saldoTotal: 1200, debitos: [] }
 ];
-let arr = clientes.map(clientes => clientes.debitos);
-console.log(arr);
-const arrayFiltro = arr.filter((linha) => {
-    const indice = linha;
-    return indice.reduce((total, linha) => total + linha);
-});
-console.table(arrayFiltro);
+const ex6 = (clientes) => {
+    clientes.forEach((cliente) => {
+        const debito = cliente.debitos.reduce((total, linha) => total + linha, 0);
+        cliente.saldoTotal -= debito;
+        cliente.debitos = [];
+    });
+    const devedores = clientes.filter((Clientes) => Clientes.saldoTotal < 0);
+    return devedores;
+};
+console.table(ex6(clientes));
 //# sourceMappingURL=Exerc%C3%ADcio6.js.map

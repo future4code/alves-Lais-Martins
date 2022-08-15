@@ -6,7 +6,7 @@ type Clientes = {
     debitos: number[]
 }
 
-const clientes = [
+const clientes: Clientes [] = [
 	{ cliente: "João", saldoTotal: 1000, debitos: [100, 200, 300] },
 	{ cliente: "Paula", saldoTotal: 7500, debitos: [200, 1040] },
 	{ cliente: "Pedro", saldoTotal: 10000, debitos: [5140, 6100, 100, 2000] },
@@ -14,15 +14,16 @@ const clientes = [
 	{ cliente: "Artur", saldoTotal: 1800, debitos: [200, 300] },
 	{ cliente: "Soter", saldoTotal: 1200, debitos: [] }
 ]
+const ex6 = (clientes: Clientes[]): Clientes[] => {
+    clientes.forEach((cliente) => {
+        const debito = cliente.debitos.reduce((total, linha) => total + linha, 0)
+        cliente.saldoTotal -= debito
+        cliente.debitos = []
+    })
+    const devedores = clientes.filter((Clientes) => Clientes.saldoTotal <0)
+    return devedores
+}
 
-let arr = clientes.map(clientes => clientes.debitos)
-console.log(arr)
+console.table(ex6(clientes))
 
-const arrayFiltro = arr.filter((linha) => {
-    const indice = linha
-    
-return indice.reduce((total, linha) => total + linha)
-   
-  })
-  
-  console.table(arrayFiltro)
+ 
