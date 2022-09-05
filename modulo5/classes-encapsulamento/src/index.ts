@@ -105,4 +105,4 @@ class Bank {
   }
 
 const banco: Bank = new Bank([usuario])
-console.log(banco.getAccounts(), [usuario])
+console.log(usuario)

@@ -39,5 +39,5 @@ class Bank {
     }
 }
 const banco = new Bank([usuario]);
-console.log(banco.getAccounts(), [usuario]);
+console.log(usuario);
 //# sourceMappingURL=index.js.map
